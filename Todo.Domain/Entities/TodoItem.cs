@@ -1,8 +1,8 @@
 namespace Todo.Domain.Entities
 {
-  public class Todo : Entity
+  public class TodoItem : Entity
   {
-    public Todo(string title, bool done, DateTime date, string user)
+    public TodoItem(string title, bool done, DateTime date, string user)
     {
       Title = title;
       Done = done;
@@ -14,5 +14,15 @@ namespace Todo.Domain.Entities
     public bool Done { get; private set; }
     public DateTime Date { get; private set; }
     public string User { get; private set; }
+
+    public void MarkAsDone()
+    {
+      Done = false;
+    }
+
+    public void UpdateTitle(string title)
+    {
+      Title = title;
+    }
   }
 }
